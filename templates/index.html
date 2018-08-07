@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登陆</title>
+    <style>
+        .loginform {
+            position: absolute;
+            right: 42%;
+            top:45%;
+        }
+        #username{
+            height: 50px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 23px;
+            border: 0px;
+        }
+        #password{
+            height: 50px;
+            width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+            font-size: 23px;
+            border: 0px;
+        }
+        #submit{
+            position: absolute;
+            margin: 5px;
+            right: 38%;
+            height: 40px;
+            width: 80px;
+            border-radius: 10px;
+            font-size: 20px;
+            border: 0px;
+        }
+        body{
+            background-color:dodgerblue ;
+        }
+        #page-title{
+            margin-left: auto;
+            margin-right:auto ;
+            color: white;
+            font-size: 30px;
+            font-family: Arial;
+        }
+</style>
+</head>
+<body>
+<h3 id="page-title">mytest</h3>
+
+<table>
+    <th class="item">文件系统状态</th>
+    <td class="table-title">文件系统</td>
+        <td class="table-title">容量</td>
+        <td class="table-title">已用</td>
+        <td class="table-title">可用</td>
+        <td class="table-title">挂载点</td>
+    {% for i in filesystem %}
+    <tr>
+        <td class="filesystem">{{i}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
