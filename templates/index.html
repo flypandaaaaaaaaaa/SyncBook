@@ -2,55 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>管理员登陆</title>
-    <style>
-        .loginform {
-            position: absolute;
-            right: 42%;
-            top:45%;
-        }
-        #username{
-            height: 50px;
-            width: 300px;
-            border-radius: 10px;
-            margin: 10px;
-            font-size: 23px;
-            border: 0px;
-        }
-        #password{
-            height: 50px;
-            width: 300px;
-            border-radius: 10px;
-            margin: 10px;
-            font-size: 23px;
-            border: 0px;
-        }
-        #submit{
-            position: absolute;
-            margin: 5px;
-            right: 38%;
-            height: 40px;
-            width: 80px;
-            border-radius: 10px;
-            font-size: 20px;
-            border: 0px;
-        }
-        body{
-            background-color:dodgerblue ;
-        }
-        #page-title{
-            margin-left: auto;
-            margin-right:auto ;
-            color: white;
-            font-size: 30px;
-            font-family: Arial;
-        }
-</style>
+    <title>管理员</title>
 </head>
 <body>
 <h3 id="page-title">mytest</h3>
 
-        <form action="/">
 <table>
     <td class="table-title">文件系统</td>
         <td class="table-title">容量</td>
@@ -58,7 +14,7 @@
         <td class="table-title">当前可用</td>
         <td class="table-title">使用比</td>
         <td class="table-title">挂载点</td>
-        <td class="table-title">扩容值</td>
+        <td class="table-title">操作</td>
     {% for i in filesystem %}
     <tr>
         <td class="filesystem">{{i[0]}}</td>
@@ -67,12 +23,9 @@
         <td class="filesystem">{{i[3]}}</td>
         <td class="filesystem">{{i[4]}}</td>
         <td class="filesystem">{{i[5]}}</td>
-        <td class="filesystem"><input name={{ i[6] }}  type="text"></td>
+        <td class="filesystem"><a href="/extend/{{i[6]}}">{% if i[6] != 'None' %}扩容{% endif %}</a></td>
     </tr>
     {% endfor %}
-<input type="submit" value="Submit">
-
 </table>
-</form>
 </body>
 </html>

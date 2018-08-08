@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登陆</title>
+</head>
+<body>
+<h3 id="page-title">mytest</h3>
+            <h3>{{extend_lvname}}</h3>
+            <p>容量{{size}}</p>
+            <p>已用{{used}}</p>
+        <form method="post" action="/extend/{{extend_lvname}}">
+            <input id="tosize" name="tosize" type="text">
+            <button id="submit" name="submit" type="submit" >提交</button>
+</form>
+</body>
+</html>
